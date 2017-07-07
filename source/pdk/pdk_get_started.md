@@ -7,7 +7,7 @@ description: "Getting started with the Puppet Development Kit, the shortest path
 
 **Note: this page is a draft in progress and is neither technically reviewed nor edited. Do not rely on information in this draft.**
 
-The Puppet Development Kit provides unified tooling to make developing and testing Puppet modules easier. This guide walks you through creating and testing a module with PDK.
+The Puppet Development Kit provides unified tooling to make developing and testing Puppet modules easier. This guide walks you through creating and running unit tests on a module with PDK.
 
 [TODO: Jean get a graphic of the workflow]
 [TODO: Jean write a PoC/qsg overview of the workflow creating a new module, in addition to the tasks and concepts below.]
@@ -24,7 +24,7 @@ To create a module with the Puppet Developer Kit, you'll:
 
 PDK generates the basic components of a new module and sets up the basic infrastructure you need to test your module.
 
-When you create a new module with PDK, the `pdk new module` command asks you a series of questions, sets some metadata default values based on your environment, and creates a `metadata.json` with the metadata for your new module. The new module that PDK creates includes all the infrastructure to use the other capabilities of `pdk`.
+When you create a new module with PDK, the `pdk new module` command asks you a series of questions, sets metadata values based on your answers, and creates a `metadata.json` for your new module. The new module that PDK creates includes all the infrastructure to use the other capabilities of `pdk`.
 
 Each question has a default response that PDK uses if you hit **Enter** to skip the question. [TODO Jean to maybe make this info a table]
 
@@ -45,11 +45,11 @@ PDK then displays the metadata information that it will use to generate the new 
   "name": "testuser-hello_module",
   "version": "0.1.0",
   "author": "testuser",
-  "summary": null,
+  "summary": "",
   "license": "Apache-2.0",
-  "source": null,
-  "project_page": null,
-  "issues_url": null,
+  "source": "",
+  "project_page": "",
+  "issues_url": "",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
@@ -86,7 +86,7 @@ After you generate a new module, we suggest validating and testing the module _b
 
 To generate a new module with PDK's default template, use the `pdk new module` command.
 
-Before you begin, you should have already installed the puppet-pdk package.
+Before you begin, you should have already installed the pdk package.
 
 1. From the command line, run the `pdk new module` command, specifying the name of the new module.
 

@@ -42,7 +42,7 @@ PDK 1.0 is supported on: [TODO: update this table when support is finalized. The
 | Ubuntu | 14.04. 16.04 | x86_64 | DEB |
 | Windows (Consumer OS) | 7, 8.1, 10 | x86_64 | MSI |
 | Windows Server (Server OS) | 2008r2, 2012, 2012r2, 2012r2 Core, and 2016 | x86_64 | MSI |
-| Mac OS X | 10.10, 10.11 | x86_64 | N/A |
+| Mac OS X | 10.11, 10.12 | x86_64 | N/A |
 
 {:.section}
 ### Before you begin
@@ -55,6 +55,17 @@ If you used an early release version of PDK, we recommend you uninstall it befor
 ## Enable the PDK repository on Linux
 
 Before you can download and install the PDK, enable the package repository to your respective Linux platform. 
+
+```
+[TODO] So this section is going to be confusing. What you have described is more like simply downloading/installing the package directly. Whereas enabling the package repo is different. The way it is described here is probably more accurate:
+https://docs.puppet.com/puppet/3.8/install_el.html
+https://docs.puppet.com/puppet/3.8/install_debian_ubuntu.html
+
+Where the details of the repo are what's being downloaded and installed, as opposed to the package itself.
+We will need to get the exact info from RE regarding this url and package repo name, but I imagine it will be something like:
+- pdk-release-el7.rpm
+- pdk-release-xenial.deb
+```
 
 {:.task}
 ### Enable PDK repo on Yum-based systems
@@ -87,8 +98,9 @@ Before you can install the PDK package, enable the repository on your Apt-based 
 2. Download the PDK package and install it as root using `dpkg` and the `install` flag (`-i`):
 
 ```
-wget https://apt.puppetlabs.com/pdk-1.0.0-wheezy.deb
+wget https://apt.puppetlabs.com/pdk-1.0.0-wheezy.deb < repo_package name TBD
 sudo dpkg -i pdk-1.0.0-wheezy.deb
+sudo apt-get update
 ```
 
 3. Run `apt-get update` after installing the release package to update the `apt` package lists.
@@ -110,8 +122,8 @@ Download the appropriate Puppet Development Kit package for your platform and in
 
 1. Install the `puppet-pdk` package [TODO: where do they need to install pdk? the machine they are working on only? other machines?] using the command appropriate to your system:
 
-   * Apt: `sudo apt-get install puppet-pdk`
-   * Yum: `sudo yum install puppet-pdk`
+   * Apt: `sudo apt-get install pdk`
+   * Yum: `sudo yum install pdk`
 
 ### On OS X
 
